@@ -1,12 +1,12 @@
 function clicar () {
-  var nome = document.querySelector(".nome").value;
-  var cpf = document.querySelector(".num2").value;
+  var nome = document.querySelector(".nome").value; // LIMPA NOME
+  var cpf = document.querySelector(".num2").value; // LIMPA CPF
 
 
   prompt("Nome: " + nome);
 function isCPF(cpf = 0) {
   
-  prompt("CPF: " + cpf);
+  prompt("CPF: " + cpf); // RETORNA O CPF DIGITADO
   if (!validaPrimeiroDigito(cpf))
     return false;
   if (!validaSegundoDigito(cpf))
@@ -46,7 +46,7 @@ sumSecondDigit = function (cpf, position = 0, sum = 0) { // CÓDIGO PARA 10 CARA
   return sum + sumSecondDigit(cpf, position + 1, cpf[position] * ((cpf.length) - position));
 }
 
-prompt(isCPF(cpf));
+prompt(isCPF(cpf)); // IMPRIME O RESULTADO
 
 }
 
