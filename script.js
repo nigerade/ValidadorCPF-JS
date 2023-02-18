@@ -24,6 +24,7 @@ function validaPrimeiroDigito(cpf = null) {
     return false
   return true;
 }
+
 function validaSegundoDigito(cpf = null) {
   let sDigit = (sumSecondDigit(cpf) * 10) % 11;
   sDigit = (sDigit == 10 || sDigit == 11) ? 0 : sDigit;
@@ -33,14 +34,13 @@ function validaSegundoDigito(cpf = null) {
   return true;
 }
 
-sumFristDigit = function (cpf, position = 0, sum = 0) {
+sumFristDigit = function (cpf, position = 0, sum = 0) { // CÓDIGO PARA 9 CARACTERES
   if (position > 9)
     return 0;
   return sum + sumFristDigit(cpf, position + 1, cpf[position] * ((cpf.length - 1) - position));
 }
 
-
-sumSecondDigit = function (cpf, position = 0, sum = 0) {
+sumSecondDigit = function (cpf, position = 0, sum = 0) { // CÓDIGO PARA 10 CARACTERES 
   if (position > 10)
     return 0;
   return sum + sumSecondDigit(cpf, position + 1, cpf[position] * ((cpf.length) - position));
